@@ -25,13 +25,3 @@ export const getFetch = (id) => {
       })            
   
 }
-
-
-const product = { id: '1', categoria: 'remeras', name: "Remera Gris",   price: 37, foto: '/assets/images/remera.jpg' }
-
-export const getFechOne = new Promise((resolve)=>{
-  setTimeout(()=>{                                          
-      resolve( product )                           
-  }, 2000)
-})
-
