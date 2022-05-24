@@ -1,4 +1,7 @@
 import { useState } from "react"
+import ButtonCount from "../AddToCartEvent/Exchange"
+
+
 
 const ItemCount = ({initial, stock, onAdd}) => {
     const [count, setcount] = useState(initial)
@@ -6,12 +9,14 @@ const ItemCount = ({initial, stock, onAdd}) => {
     const add = () => setcount(count+1)
     const reduce = () => setcount(count-1)
 
+
     return (
+
         <div>
             { count }<br/>
             <button onClick={add}>+</button>
             <button onClick={reduce}>-</button><br/>
-            <button onClick={()=> onAdd(count)}>Add To Cart</button>
+            <ButtonCount onAdd={count}/>
         </div>
     )
 }

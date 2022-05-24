@@ -1,10 +1,10 @@
-import '../../../src/Products.css';
+import '../../../../src/Products.css';
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 
-import ItemList from "../../components/ItemList/ItemList"
-import { getFetch } from "../../helpers/getFetch"
-import '../../App.css'
+import ItemList from "../../../components/ItemList/ItemList"
+import { getFetch } from "../../../helpers/getFetch"
+import '../../../App.css'
 
 
 const ItemListContainer = ( {} ) => {      
@@ -26,9 +26,6 @@ const ItemListContainer = ( {} ) => {
             .finally(()=>setLoading(false))                 
         }
     }, [id])
-    
-    console.log(id)
-
     
     return (
         <div>

@@ -11,7 +11,7 @@ const array = [
 const NavBar = () => {
 
     return (
-        <>
+        
             <navbar className="App-navbar" >
 
                 <NavLink to="/">
@@ -25,7 +25,7 @@ const NavBar = () => {
                 <CartWidget />
 
             </navbar> 
-        </>
+     
     )
 }
 

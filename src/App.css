@@ -62,6 +62,10 @@ body {
   padding: 5px; 
 }
 
+.itemDetails img {
+  width: 120px;
+}
+
 
 /* li {
   margin: 10px;
