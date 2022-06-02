@@ -21,7 +21,7 @@ export const getFetch = (id) => {
       setTimeout(()=>{
               const query = id ? productsArray.find(producto => producto.id === id ) : productsArray                                  
               resolve( query )                           
-          }, 2000)
+          }, 1000)
       })            
   
 }

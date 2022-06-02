@@ -12,19 +12,19 @@ const NavBar = () => {
 
     return (
         
-            <navbar className="App-navbar" >
+            <div className="App-navbar" >
 
                 <NavLink to="/">
-                    <img className='App-logo' src={logo}></img>
+                    <img className='App-logo' src={logo} alt="spinning ball"></img>
                 </NavLink>
 
-                <NavLink className="navBarLinks" to="/">World Cup 2022</NavLink>
+                <NavLink className="navBarLinks" key="home" to="/">World Cup 2022</NavLink>
 
-                {array.map(param => <NavLink className="navBarLinks" key={param.id} to={`/category/${param.name}`}>{param.nameButton}</NavLink>) }
+                {array.map(param => <NavLink className="navBarLinks" key={param.idCategory} to={`/category/${param.name}`}>{param.nameButton}</NavLink>) }
 
                 <CartWidget />
 
-            </navbar> 
+            </div> 
      
     )
 }

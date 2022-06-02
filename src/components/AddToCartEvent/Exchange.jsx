@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
+
 const InputCount= ()=> {
 
     return (
@@ -22,10 +23,13 @@ const InputCount= ()=> {
 
 
 const ButtonCount= ({handleInter})=> {
-    return <button onClick={handleInter} >
-                Add To Cart
-            </button>
 
+    return (
+
+        <button onClick={handleInter} >
+            Add To Cart
+        </button> 
+    )
 }
 
 const Exchange = () => {

@@ -12,6 +12,12 @@ body {
   pointer-events: none;
 }
 
+.App-logo-loading {
+  height: 12vmin;
+  pointer-events: none;
+  margin-top: 300px;
+}
+
 .App-navbar {
   display: flex;
   list-style-type: none;
@@ -119,6 +125,10 @@ button {
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+
+  .App-logo-loading {
+    animation: App-logo-spin infinite 5s linear;
   }
 }
 

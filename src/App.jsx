@@ -12,7 +12,7 @@ function App() {
     return (
         <BrowserRouter>
                 <div className="App">  
-                    <NavBar />
+                    <NavBar/>
                     
                     <Routes>
                         <Route path="/" element = { <ItemListContainer /> } />

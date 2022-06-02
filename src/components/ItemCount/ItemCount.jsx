@@ -3,20 +3,20 @@ import ButtonCount from "../AddToCartEvent/Exchange"
 
 
 
-const ItemCount = ({initial, stock, onAdd}) => {
-    const [count, setcount] = useState(initial)
+const ItemCount = ({initial, productId}) => {
+    const [count, setCount] = useState(initial)
 
-    const add = () => setcount(count+1)
-    const reduce = () => setcount(count-1)
-
-
+    const add = () => setCount(count+1)
+    const reduce = () => setCount(count-1)
+    
     return (
 
         <div>
-            { count }<br/>
+            <p> {count} </p>
             <button onClick={add}>+</button>
             <button onClick={reduce}>-</button><br/>
-            <ButtonCount onAdd={count}/>
+            <h3>Product Id: #{productId}</h3>
+            <ButtonCount />        
         </div>
     )
 }

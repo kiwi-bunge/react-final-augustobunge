@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import ItemList from "../../../components/ItemList/ItemList"
 import { getFetch } from "../../../helpers/getFetch"
 import '../../../App.css'
+import logo from '../../../assets/images/pelotaMundial.png'
 
 
 const ItemListContainer = ( {} ) => {      
@@ -30,7 +31,7 @@ const ItemListContainer = ( {} ) => {
     return (
         <div>
             { loading ? 
-                <h2>Loading...</h2> 
+                <img className='App-logo-loading' src={logo} alt="spinning ball"></img>
                 :
                 <>
                 <div className='itemListContainer'>
