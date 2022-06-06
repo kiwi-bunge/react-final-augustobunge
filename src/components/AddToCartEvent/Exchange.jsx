@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const InputCount= ()=> {
 
     return (
@@ -21,16 +22,21 @@ const InputCount= ()=> {
     )
 }
 
+const ButtonCount= ({handleInter, counter})=> {
 
-const ButtonCount= ({handleInter})=> {
+    const wrapperFunction = () => {
+        handleInter();
+        console.log(counter)
+    }
 
     return (
 
-        <button onClick={handleInter} >
+        <button onClick={wrapperFunction} >
             Add To Cart
         </button> 
     )
 }
+
 
 const Exchange = () => {
 
@@ -49,7 +55,7 @@ const Exchange = () => {
                 : 
                     <InputCount />
             }
-             {/* <Count onConfirm={addToCart} maxQuantity={itemMax} />  */}
+             
         </div>
     )
 }

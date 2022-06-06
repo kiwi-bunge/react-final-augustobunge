@@ -6,7 +6,8 @@ import logo from '../../assets/images/pelotaMundial.png'
 
 const array = [
     {idCategory: '1', name: 'Balls', nameButton: 'Balls'},
-    {idCategory: '2', name: 'Jerseys', nameButton: 'Jerseys'}
+    {idCategory: '2', name: 'Jerseys', nameButton: 'Jerseys'},
+    {idCategory: '3', name: 'Boots', nameButton: 'Boots'}
 ]
 const NavBar = () => {
 

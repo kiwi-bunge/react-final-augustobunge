@@ -8,7 +8,7 @@ import '../../../App.css'
 import logo from '../../../assets/images/pelotaMundial.png'
 
 
-const ItemListContainer = ( {} ) => {      
+const ItemListContainer = () => {      
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 

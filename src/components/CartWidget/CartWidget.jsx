@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Img from '../../images/shopping-cart.png'
+import Img from '../../assets/images/shopping-cart.png'
 import '../../App.css'
 
 
