@@ -9,7 +9,7 @@ const ItemDetail = ({product}) => {
   const productId = product.id
   const stock = product.stock
   const initial = 1
-  
+
 
   const [count, setCount] = useState(initial)
 
@@ -47,7 +47,7 @@ const ItemDetail = ({product}) => {
           <h1>{product.name}</h1>
           <h2>{product.category}</h2>
           <p>{product.price}</p>
-          <ItemCount add={add} reduce={reduce} count={count} initial={1} productId={productId} stock={product.stock} />
+          <ItemCount add={add} reduce={reduce} count={count} productId={productId} />
           <Exchange onAdd={() => onAdd(count)} />
         </div>
         

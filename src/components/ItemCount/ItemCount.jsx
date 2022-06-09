@@ -8,7 +8,7 @@ const ItemCount = ({add, reduce, productId, count}) => {
             <p> {count} </p>
             <button onClick={add}>+</button>
             <button onClick={reduce}>-</button><br/>
-            <h3>Product Id: #{productId}</h3>
+            <p>Product Id: #{productId}</p>
         </div>
     )
 }
