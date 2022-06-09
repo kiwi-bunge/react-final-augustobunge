@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ButtonCount } from "../ButtonCount/ButtonCount";
 
 
 
 
-const InputCount= ()=> {
+const InputCount = () => {
 
     return (
-        <>
+   
+        <>        
         <Link to='/cart' >
             <button onClick={()=>console.log('go to cart') } >
                 Proceed To Payment
@@ -22,36 +24,22 @@ const InputCount= ()=> {
     )
 }
 
-const ButtonCount= ({handleInter, counter})=> {
 
-    const wrapperFunction = () => {
-        handleInter();
-        console.log(counter)
-    }
+const Exchange = ({onAdd}) => {
 
-    return (
+    const [change, setChange ] = useState('button')
 
-        <button onClick={wrapperFunction} >
-            Add To Cart
-        </button> 
-    )
-}
+    const handleExchange=()=>{
+        setChange('input')
 
-
-const Exchange = () => {
-
-    const [count, setCount ] = useState('button')
-
-    const handleInter=()=>{
-        setCount('input')
     }
     
     return (
         <div>
             
             {
-                count === 'button' ? 
-                    <ButtonCount handleInter={handleInter} />
+                change === 'button' ? 
+                    <ButtonCount handleExchange={()=> handleExchange()} onAdd={onAdd} />
                 : 
                     <InputCount />
             }
