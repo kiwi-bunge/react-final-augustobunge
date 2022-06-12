@@ -2,6 +2,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import '../../App.css'
 import Exchange from '../AddToCartEvent/Exchange'
 import { useState } from "react"
+import { useCartContext } from "../../Context/CartContext"
 
 
 const ItemDetail = ({product}) => {
@@ -32,10 +33,15 @@ const ItemDetail = ({product}) => {
     
   }
 
+  const {addToCart, cartList} = useCartContext()
+ 
   function onAdd(amount) {
 
-    console.log(amount)
+    addToCart({ ...product, quantity: amount })
   }
+
+  console.log(cartList)
+
 
   return (
 
