@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
-import '../../App.css'
+import './navbar.css'
 import logo from '../../assets/images/pelotaMundial.png'
 
 
@@ -10,9 +10,7 @@ const array = [
     {idCategory: '2', name: 'Jerseys', nameButton: 'Jerseys'},
     {idCategory: '3', name: 'Boots', nameButton: 'Boots'}
 ]
-const NavBar = () => {
-
-    
+const NavBar = () => {  
 
     return (
         

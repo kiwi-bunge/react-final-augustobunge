@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { ButtonCount } from "../ButtonCount/ButtonCount";
 
 
-
-
 const InputCount = () => {
 
     return (

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../ItemDetail/ItemDetail'
-import { getFetch } from '../../../helpers/getFetch'
 import logo from '../../../assets/images/pelotaMundial.png'
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
@@ -10,13 +10,17 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const { detailId } = useParams()
 
+
     useEffect(() => {
-        getFetch(detailId)  
-        .then(answer=> setProduct(answer))
+
+        const database = getFirestore()
+        const dbQuery = doc(database, 'products', detailId)
+        getDoc(dbQuery)
+        .then(answer => setProduct( { id: answer.id, ...answer.data() } ))
         .catch((err)=> console.log(err))
-        .finally(()=>setLoading(false)) 
-     
-    })
+        .finally(()=>setLoading(false))
+        
+      }, [detailId])
     
     return (
         <div>

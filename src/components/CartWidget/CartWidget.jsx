@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Img from '../../assets/images/shopping-cart.png'
-import '../../App.css'
+import './cartWidget.css'
 import { useCartContext } from '../../Context/CartContext'
 
 

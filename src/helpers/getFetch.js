@@ -4,7 +4,9 @@ import ballImage3 from '../assets/images/brazuca.png'
 import argentina from '../assets/images/argentina.png'
 import brazil from '../assets/images/brazil.png'
 import france from '../assets/images/france.png'
-
+import adidascopa from '../assets/images/adidas-copa.png'
+import niketiempo from '../assets/images/nike-tiempo.png'
+import pumaking from '../assets/images/puma-king.png'
 
 const productsArray = [
 
@@ -14,9 +16,9 @@ const productsArray = [
   { id: '4', category: "Jerseys", name: "Argentina", price: 58.49, img: argentina, stock: 10},
   { id: '5', category: "Jerseys", name: "Brazil", price: 58.49, img: brazil, stock: 10},
   { id: '6', category: "Jerseys", name: "France", price: 58.49, img: france, stock: 10},
-  { id: '7', category: "Boots", name: "Adidas", price:  58.49, img: france, stock: 10},
-  { id: '8', category: "Boots", name: "Nike", price: 58.49, img: france, stock: 10},
-  { id: '9', category: "Boots", name: "Puma", price: 58.49, img: france, stock: 10},
+  { id: '7', category: "Boots", name: "Adidas", price:  58.49, img: adidascopa, stock: 10},
+  { id: '8', category: "Boots", name: "Nike", price: 58.49, img: niketiempo, stock: 11},
+  { id: '9', category: "Boots", name: "Puma", price: 58.49, img: pumaking, stock: 15},
 ]
 
 export const getFetch = (id) => {
@@ -24,7 +26,7 @@ export const getFetch = (id) => {
       setTimeout(()=>{
               const query = id ? productsArray.find(product => product.id === id ) : productsArray                                  
               resolve( query )                           
-          }, 1000)
+          }, 3000)
       })            
   
 }

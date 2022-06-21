@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import '../../App.css'
+import './item.css'
 
 const Item = ( {prod} ) => {
 
@@ -13,9 +13,9 @@ const Item = ( {prod} ) => {
                     <div>
                         <img src={prod.img} alt=''/>                                                            
                     </div>
-                    <div className="itemDetails" >{prod.price}</div>
+                    <div className="itemDetails" >${prod.price}</div>
                     <div>  
-                        <button>
+                        <button className="productDetailButton">
                             Product Detail
                         </button>                
                     </div>

@@ -3,30 +3,42 @@ import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 
 import ItemList from "../../../components/ItemList/ItemList"
-import { getFetch } from "../../../helpers/getFetch"
-import '../../../App.css'
+import './itemListContainer.css'
 import logo from '../../../assets/images/pelotaMundial.png'
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
+const ItemListContainer = () => {  
 
-const ItemListContainer = () => {      
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-
-    const { id } = useParams() 
+    
+    const { category } = useParams() 
 
     useEffect(() => {
-        if (id) {
-            getFetch()
-            .then(answer=> setProducts(answer.filter((prods) => prods.category === id)))
-            .catch((err)=> console.log(err))
-            .finally(()=>setLoading(false))                             
+      
+        const database = getFirestore()
+
+        const queryCollection = collection(database, "products")
+       
+
+        if(!category) {
+
+            getDocs(queryCollection)
+                .then((answer) => setProducts(answer.docs.map((prod) => ({ id: prod.id, ...prod.data() }))))
+                .catch((err)=> console.log(err))
+                .finally(()=>setLoading(false))
+
         } else {
-            getFetch()
-            .then(answer=> setProducts(answer))
-            .catch((err)=> console.log(err))
-            .finally(()=>setLoading(false))                 
+
+            const queryCollectionFilter = query(queryCollection, where("category","==", category))
+
+            getDocs(queryCollectionFilter)
+                .then((answer) => setProducts(answer.docs.map((doc) => ({ id: doc.id, ...doc.data() }))))
+                .catch((err)=> console.log(err))
+                .finally(()=>setLoading(false))
         }
-    }, [id])
+
+    }, [category])
     
     return (
         <div>

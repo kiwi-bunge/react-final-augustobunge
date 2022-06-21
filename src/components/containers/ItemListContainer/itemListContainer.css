@@ -1,0 +1,6 @@
+.itemListContainer {
+    display: flex;
+    padding: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }

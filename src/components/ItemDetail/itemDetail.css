@@ -1,0 +1,18 @@
+.itemDetails {
+    color: #282c34;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 5px; 
+  }
+  
+  .itemDetails img {
+    width: 120px;
+  }
+
+  .stockAvailable {
+    color: green
+  }
+
+  .insufficientStock {
+    color: red
+  }

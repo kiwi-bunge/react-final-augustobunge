@@ -1,5 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount"
-import '../../App.css'
+import './itemDetail.css'
 import Exchange from '../AddToCartEvent/Exchange'
 import { useState } from "react"
 import { useCartContext } from "../../Context/CartContext"
@@ -10,50 +10,58 @@ const ItemDetail = ({product}) => {
   const productId = product.id
   const stock = product.stock
   const initial = 1
+  const image = product.img
+
 
 
   const [count, setCount] = useState(initial)
+  const [alert, setAlert] = useState(false)
 
   const add = () => {
 
       if(count >= stock) {
-          alert("Sorry! We only have", {stock}, " in stock.")
+
+        setAlert(true)
       } else {
-      setCount(count+1)}
+
+        setCount(count+1)}
 
   }
 
   const reduce = () => {
 
     if(count <=1) {
-        setCount(count)
+
+      setCount(count)
     } else {
-        setCount(count-1)
+
+      setCount(count-1)
     }
-    
+
+    if(count <= stock) {
+      setAlert(false)
+    }   
   }
 
-  const {addToCart, cartList} = useCartContext()
+  const {addToCart} = useCartContext()
  
   function onAdd(amount) {
 
     addToCart({ ...product, quantity: amount })
   }
 
-  console.log(cartList)
-
-
   return (
 
       <div className="itemDetails" >
         <div>
-          <img alt="product" src={product.img} />
+          <img alt="product" src={image} />
         </div>
         <div>
           <h1>{product.name}</h1>
           <h2>{product.category}</h2>
-          <p>{product.price}</p>
+          <p>${product.price}</p>
           <ItemCount add={add} reduce={reduce} count={count} productId={productId} />
+          { !alert ? <h3 className="stockAvailable">Stock Available</h3> : <h3 className="insufficientStock">Insufficient Stock</h3> }
           <Exchange onAdd={() => onAdd(count)} />
         </div>
         
