@@ -3,13 +3,13 @@ import CartWidget from '../CartWidget/CartWidget'
 import './navbar.css'
 import logo from '../../assets/images/pelotaMundial.png'
 
-
-
 const array = [
+    
     {idCategory: '1', name: 'Balls', nameButton: 'Balls'},
     {idCategory: '2', name: 'Jerseys', nameButton: 'Jerseys'},
     {idCategory: '3', name: 'Boots', nameButton: 'Boots'}
 ]
+
 const NavBar = () => {  
 
     return (
@@ -20,7 +20,7 @@ const NavBar = () => {
                     <img className='App-logo' src={logo} alt="spinning ball"></img>
                 </NavLink>
 
-                <NavLink className="navBarLinks" key="home" to="/">World Cup 2022</NavLink>
+                <NavLink className="navBarLinks" key="home" to="/">Home</NavLink>
 
                 {array.map(param => <NavLink className="navBarLinks" key={param.idCategory} to={`/category/${param.name}`}>{param.nameButton}</NavLink>) }
 

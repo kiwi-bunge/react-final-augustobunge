@@ -1,0 +1,23 @@
+.home {
+    display: flex;
+    align-items: center;
+}
+
+.home img {
+    margin: 50px;
+    height: 600px;
+}
+
+.shopNow {
+    text-decoration: none;
+}
+
+.shopNow h1 {
+    color: #000942;
+    padding: 10px;
+    font-size: 50px;
+}
+
+.shopNow h1:hover {
+    padding: 25px;
+}

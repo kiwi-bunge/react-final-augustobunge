@@ -1,15 +1,16 @@
+import './ItemCount.css'
 
 const ItemCount = ({add, reduce, productId, count}) => {
-
-    
+     
     return (
 
-        <div>
-            <p> {count} </p>
-            <button onClick={add}>+</button>
-            <button onClick={reduce}>-</button><br/>
-            <p>Product Id: #{productId}</p>
-        </div>
+        <>
+            <div className='itemCount'>
+                <button onClick={add}>+</button>
+                <p> {count} </p>            
+                <button onClick={reduce}>-</button><br/>
+            </div>
+        </>
     )
 }
 

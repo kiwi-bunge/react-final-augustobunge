@@ -1,18 +1,30 @@
-.itemDetails {
-    color: #282c34;
+.itemDetailsBox {
     font-size: 25px;
-    text-decoration: none;
-    padding: 5px; 
+    display: flex;
+    justify-content: space-around;
+    margin: 75px 0px;
   }
   
-  .itemDetails img {
-    width: 120px;
+  .itemDetailsBox img {
+    width: 500px;
+    margin: 0px 100px;
+  }
+
+  .itemDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    border: 1px solid #000924;
+    box-shadow: 5px 5px 5px 5px #000924;
+    border-radius: 5px;
   }
 
   .stockAvailable {
-    color: green
+    color: green;
+    font-size: 15px;
   }
 
   .insufficientStock {
-    color: red
+    color: red;
   }

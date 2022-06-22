@@ -1,17 +1,19 @@
 .App-navbar {
     display: flex;
-    list-style-type: none;
     align-items: center;
-    background-color: #282c34;
+    background-color: #000924;
     min-height: 12vh;
     justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
-    color: white;
     padding-left: 300px;
     padding-right: 300px;
-  }
+}
   
-  .navBarLinks {
+.navBarLinks {
     text-decoration: none;
     color: white;
-  }
+}
+
+.navBarLinks:hover {
+  text-shadow: 1px 1px 15px white;
+}

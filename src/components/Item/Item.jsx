@@ -4,18 +4,19 @@ import './item.css'
 const Item = ( {prod} ) => {
 
   return (
+    
         <div className="itemContainer">                      
-            <Link className="itemDetails" to={`/detail/${prod.id}`}>
-                <div className="itemDetails" >
-                    <div className="itemDetails" >
-                        {`${prod.name}`}
+            <Link className="itemInCategory" to={`/detail/${prod.id}`}>
+                <div>
+                    <div className="item" >
+                        {prod.name}
                     </div>
-                    <div>
+                    <div className="item" >
                         <img src={prod.img} alt=''/>                                                            
                     </div>
-                    <div className="itemDetails" >${prod.price}</div>
+                    <div className="item" >Price: ${prod.price}</div>
                     <div>  
-                        <button className="productDetailButton">
+                        <button>
                             Product Detail
                         </button>                
                     </div>

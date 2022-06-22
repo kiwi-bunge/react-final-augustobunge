@@ -1,84 +1,60 @@
 import { useCartContext } from "../../Context/CartContext"
 import { useState, useEffect } from "react"
 import { Form } from "../Form/Form";
+import CartDetails from "../CartDetails/CartDetails";
 
 
 
 const Cart = () => {
 
-  const { cartList, eliminateCart, totalPrice, eliminateProduct } = useCartContext()
+	const { cartList } = useCartContext()
 
-  const [emptyCart, setEmptyCart] = useState(true)
+	const [emptyCart, setEmptyCart] = useState(true)
 
-  function checkCart() {
+	function checkCart() {
 
-    if(cartList !== []) {
+		if(cartList !== []) {
 
-      setEmptyCart(false)
-    }
+			setEmptyCart(false)
+		}
 
-    if(cartList === [])
+		if(cartList === [])
 
-      setEmptyCart(true)
-  }
-  
-  useEffect(() => {
-    checkCart()
-  })
+			setEmptyCart(true)
+	}
+	
+	useEffect(() => {
+		
+		checkCart()
+	})
+	
+	return (
 
-  console.log(cartList)
-  console.log(emptyCart)
-  
-  return (
+		<div>       
 
-    <div> 
+			{ emptyCart
+			
+				?
 
-          
+				<h4>Empty Cart</h4>
 
-      { emptyCart
-      
-        ?
+				:
 
-        <h4>Empty Cart</h4>
+				<>
+                    <div>
+                        <CartDetails />
+                            
+                        <Form />
+                    </div>
+				</>
 
-        :
+			}
 
-        <>
-
-          <div>
-
-            {cartList.map(prod => 
-
-              <div key={prod.id}>
-
-                <li>
-                  Product: {prod.name} - Price: {prod.price} - Quantity: {prod.quantity} 
-                </li>
-
-                <button onClick={()=> eliminateProduct(prod.id)}>
-                  Eliminate Product
-                </button>
-
-              </div>
-            )}
-
-            <h3>Total Price: {totalPrice() !== 0 && totalPrice()}</h3>
-
-            <button onClick={eliminateCart} >Empty Cart</button>
-          </div>
-          
-          <Form />
-
-        </>
-
-      }
-
-    </div>
-  
-    
-  )
+		</div>
+		
+	)
 }
 
 export default Cart
 
-  
+	

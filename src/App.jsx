@@ -5,6 +5,7 @@ import ItemListContainer from './components/containers/ItemListContainer/ItemLis
 import ItemDetailContainer from './components/containers/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './Context/CartContext'
+import Home from './components/Home/Home';
 
 
 
@@ -18,7 +19,8 @@ function App() {
                     <NavBar/>
                     
                         <Routes>
-                            <Route path="/" element = { <ItemListContainer /> } />
+                            <Route path="/" element = { <Home /> } />
+                            <Route path="/shop" element = { <ItemListContainer /> } />
                             <Route path="/category/:category" element = { <ItemListContainer /> } />
                             <Route path="/detail/:detailId" element = { <ItemDetailContainer /> } />
                             <Route path="/cart" element = { <Cart /> } />

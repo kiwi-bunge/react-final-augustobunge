@@ -1,6 +1,12 @@
 .itemListContainer {
     display: flex;
-    padding: 50px;
     flex-wrap: wrap;
     justify-content: center;
   }
+
+.title {
+  color: white;
+  background-color: #000924;
+  padding: 10px;
+  font-size: 30px;
+}

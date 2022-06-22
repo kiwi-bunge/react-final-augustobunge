@@ -2,6 +2,20 @@ body {
   width: auto;
 }
 
+button {
+  padding: 10px;
+  color: #000924;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  margin: 10px;
+}
+
+button:hover {
+  color: white;
+  background-color: #000924;
+}
+
 .App {
   text-align: center;
   width: 100%;

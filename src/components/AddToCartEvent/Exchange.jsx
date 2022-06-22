@@ -8,16 +8,17 @@ const InputCount = () => {
     return (
    
         <>        
-        <Link to='/cart' >
-            <button onClick={()=>console.log('go to cart') } >
-                Proceed To Payment
-            </button>
-        </Link>
-        <Link to='/' >
-            <button onClick={()=> console.log('back home') } >
-                Back Home
-            </button>
-        </Link>
+            <Link to='/cart' >
+                <button>
+                    Proceed To Payment
+                </button>
+            </Link>
+
+            <Link to='/' >
+                <button>
+                    Back Home
+                </button>
+            </Link>
         </>
     )
 }
@@ -33,6 +34,7 @@ const Exchange = ({onAdd}) => {
     }
     
     return (
+        
         <div>
             
             {

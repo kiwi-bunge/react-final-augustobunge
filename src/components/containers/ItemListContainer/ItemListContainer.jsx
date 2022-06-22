@@ -1,7 +1,6 @@
-import '../../../../src/Products.css';
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
-
+import Footer from '../../Footer/Footer'
 import ItemList from "../../../components/ItemList/ItemList"
 import './itemListContainer.css'
 import logo from '../../../assets/images/pelotaMundial.png'
@@ -41,19 +40,29 @@ const ItemListContainer = () => {
     }, [category])
     
     return (
+
         <div>
             { loading ? 
                 <img className='App-logo-loading' src={logo} alt="spinning ball"></img>
                 :
                 <>
-                <div className='itemListContainer'>
-                    <ItemList products={products} />                     
-                </div>
-                
-                </> 
-            }
+                    <div className='title'>
+                        {  category ?
 
-            
+                            <h2>{category}</h2>
+                            :
+                            <h2>All Products</h2>
+
+                        }
+                    </div>
+                    
+                    <div className='itemListContainer'>
+                        <ItemList products={products} />                     
+                    </div>
+
+                    <Footer />        
+                </> 
+            }   
         </div>
     )
 }

@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    background-color: #000924;
+    justify-content: center;
+    padding: 50px;
+}
+
+.footer img {
+    margin: 10px;
+    width: 50px;
+}
+
+.copyrights p {
+    background-color: #000924;
+    color: white;
+    margin: 0;
+    padding-bottom: 15px;
+}

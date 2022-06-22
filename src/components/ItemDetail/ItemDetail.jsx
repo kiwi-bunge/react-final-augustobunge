@@ -4,71 +4,72 @@ import Exchange from '../AddToCartEvent/Exchange'
 import { useState } from "react"
 import { useCartContext } from "../../Context/CartContext"
 
-
 const ItemDetail = ({product}) => {
 
-  const productId = product.id
-  const stock = product.stock
-  const initial = 1
-  const image = product.img
+	const productId = product.id
+	const stock = product.stock
+	const initial = 1
+	const image = product.img
 
+	const [count, setCount] = useState(initial)
+	const [alert, setAlert] = useState(false)
 
+	const add = () => {
 
-  const [count, setCount] = useState(initial)
-  const [alert, setAlert] = useState(false)
+		if(count >= stock) {
 
-  const add = () => {
+			setAlert(true)
+		} else {
 
-      if(count >= stock) {
+			setCount(count+1)}
 
-        setAlert(true)
-      } else {
+	}
 
-        setCount(count+1)}
+	const reduce = () => {
 
-  }
+		if(count <=1) {
 
-  const reduce = () => {
+			setCount(count)
+		} else {
 
-    if(count <=1) {
+			setCount(count-1)
+		}
 
-      setCount(count)
-    } else {
+		if(count <= stock) {
+			setAlert(false)
+		}   
+	}
 
-      setCount(count-1)
-    }
-
-    if(count <= stock) {
-      setAlert(false)
-    }   
-  }
-
-  const {addToCart} = useCartContext()
+	const {addToCart} = useCartContext()
  
-  function onAdd(amount) {
+	function onAdd(amount) {
 
-    addToCart({ ...product, quantity: amount })
-  }
+		addToCart({ ...product, quantity: amount })
+	}
 
-  return (
+	return (
 
-      <div className="itemDetails" >
-        <div>
-          <img alt="product" src={image} />
-        </div>
-        <div>
-          <h1>{product.name}</h1>
-          <h2>{product.category}</h2>
-          <p>${product.price}</p>
-          <ItemCount add={add} reduce={reduce} count={count} productId={productId} />
-          { !alert ? <h3 className="stockAvailable">Stock Available</h3> : <h3 className="insufficientStock">Insufficient Stock</h3> }
-          <Exchange onAdd={() => onAdd(count)} />
-        </div>
-        
-      </div>
+		<div className="itemDetailsBox" >
+			<div>
+				<img alt="product" src={image} />
+			</div>
+			<div className="itemDetails">
+				<h2>{product.name}</h2>
+				<p>Price: ${product.price}</p>
+				<ItemCount add={add} reduce={reduce} count={count} productId={productId} />
 
+				{ !alert ? 
+				
+					<h3 className="stockAvailable">Stock Available</h3> 
+					: 
+					<h3 className="insufficientStock">Insufficient Stock</h3> 
+				
+				}
 
-  )
+				<Exchange onAdd={() => onAdd(count)} />
+			</div>    
+		</div>
+	)
 }
 
 export default ItemDetail
